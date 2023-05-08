@@ -27,4 +27,9 @@ public class UserPer {
     public void setPassword(String Password) {
         this.Password = Password;
     }
+
+    @Override
+    public String toString() {
+        return UserName + " " + Password;
+    }
 }

@@ -12,8 +12,8 @@ public interface CredService extends MongoRepository<UserPer, String> {
     @Query("{UserName:'?0'}")
     List<UserPer> findCredByUser(String UserName);
 
-    @Query(value = "{UserName:'?0'}", fields = "{'Password':1}")
-    String findPassByUser(String UserName);
+    @Query(value = "{UserName:'?0'}", fields = "{'_id':0,'Password':1}")
+    UserPer findPassByUser(String UserName);
 
     public long count();
 }
